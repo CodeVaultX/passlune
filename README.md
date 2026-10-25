@@ -4,6 +4,15 @@ A password manager for Android, Windows, Chrome, Edge and Firefox. Your vault is
 
 [Türkçe](#türkçe) · [Privacy policy](privacy.md)
 
+<p align="center">
+  <img src="screenshots/dashboard.jpg" width="19%" alt="Security dashboard">
+  <img src="screenshots/grid.jpg" width="19%" alt="Grid view and themes">
+  <img src="screenshots/edit.jpg" width="19%" alt="New entry with strength meter">
+  <img src="screenshots/settings.jpg" width="19%" alt="Settings">
+  <img src="screenshots/unlock.jpg" width="19%" alt="Locked vault">
+</p>
+<p align="center"><sub>Security dashboard · Grid view · Strength and reuse warnings · Themes, sync and backups · Locked vault</sub></p>
+
 ## Download
 
 - **Windows:** [Releases](../../releases/latest). Download `Passlune-Windows.zip`, extract it anywhere and run `Passlune.exe`.
@@ -33,6 +42,8 @@ This repository holds the downloads and documentation only; the source code is n
 Android, Windows, Chrome, Edge ve Firefox için şifre yöneticisi. Kasanız cihazınızda şifrelenir ve kendi Google Drive'ınız üzerinden senkronlanır.
 
 [Gizlilik politikası](privacy.md#türkçe)
+
+<sub>Ekran görüntüleri (yukarıda): Güvenlik paneli · Izgara görünümü · Güç ve tekrar kullanım uyarıları · Temalar, senkron ve yedekler · Kilitli kasa</sub>
 
 ### İndir
 
