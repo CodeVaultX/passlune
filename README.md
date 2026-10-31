@@ -16,7 +16,7 @@ A password manager for Android, Windows, Chrome, Edge and Firefox. Your vault is
 ## Download
 
 - **Windows:** [Releases](../../releases/latest). Download `Passlune-Windows.zip`, extract it anywhere and run `Passlune.exe`.
-- **Firefox:** add-on on addons.mozilla.org (link coming soon).
+- **Firefox:** add-on on addons.mozilla.org [Passlune](https://addons.mozilla.org/tr/firefox/addon/passlune-password-manager/).
 - **Android:** coming to Google Play.
 
 ## Features
