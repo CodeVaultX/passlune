@@ -48,7 +48,7 @@ Android, Windows, Chrome, Edge ve Firefox için şifre yöneticisi. Kasanız cih
 ### İndir
 
 - **Windows:** [Sürümler](../../releases/latest). `Passlune-Windows.zip` dosyasını indirip istediğiniz yere çıkarın ve `Passlune.exe`'yi çalıştırın.
-- **Firefox:** addons.mozilla.org'daki eklenti (bağlantı yakında).
+- **Firefox:** addons.mozilla.org'daki eklenti: [Passlune](https://addons.mozilla.org/tr/firefox/addon/passlune-password-manager/).
 - **Android:** yakında Google Play'de.
 
 ### Özellikler
