@@ -50,18 +50,7 @@ If you publish your own build, change the application ID (`app.passlune` in `and
 
 ## Google Drive sync (optional)
 
-The official builds use OAuth clients of our Google Cloud project; they are not in this repository. Without your own, the app hides Drive sync and can sync through a folder instead (Dropbox, OneDrive, Syncthing, ...). The extensions sync only through Drive, so they need a project of yours.
-
-1. Create a project at https://console.cloud.google.com and enable the **Google Drive API**.
-2. **Google Auth Platform**: set the app name, support e-mail, home page and privacy policy link; add the scope `https://www.googleapis.com/auth/drive.appdata` (non-sensitive); publish the app to "In production".
-3. Create the clients you need:
-   - **Android**: your application ID and the SHA-1 of your signing key (`keytool -list -v -keystore <keystore> -alias <alias>`).
-   - **Web application**: Android uses its client ID as `serverClientId`; the Firefox and Edge extensions sign in with its ID and secret. Add each extension's redirect address (the popup shows it when sign-in fails) as an authorized redirect URI.
-   - **Desktop app** (Windows): client ID and secret.
-   - **Chrome Extension** (Chrome): your extension's item ID.
-4. Put them in `lib/config.dart`, `extension/chrome/lib/config.js`, `extension/firefox/lib/config.js` and `oauth2.client_id` in `extension/chrome/manifest.json`.
-
-Every user signs in with their own Google account; the vault goes to that account's hidden app folder (`drive.appdata`), still encrypted.
+The Google sign-in clients of the official builds are not in this repository. Without your own, the app hides Drive sync and can still sync through a folder; the browser extensions need Drive. [GOOGLE_SETUP.md](GOOGLE_SETUP.md) shows step by step how to create your own free Google Cloud project for Android, Windows, Chrome, Edge and Firefox.
 
 ---
 
@@ -83,4 +72,4 @@ Flutter SDK (stable); Android için Android SDK ve JDK 17, Windows için Visual 
 
 ### Google Drive senkronu (isteğe bağlı)
 
-Resmi sürümlerin Google istemci kimlikleri bu depoda yoktur. Kendi kimlikleriniz olmadan uygulama Drive senkronunu gizler ve klasör üzerinden senkron (Dropbox, OneDrive, Syncthing...) kullanılabilir. Eklentiler yalnızca Drive ile senkron yaptığı için kendi Google projenizi gerektirir. Adımlar yukarıdaki İngilizce bölümdedir: Drive API'yi açın, `drive.appdata` kapsamını ekleyin, Android, Web application, Desktop app ve Chrome Extension istemcilerini oluşturup kimlikleri `lib/config.dart`, iki `config.js` dosyası ve Chrome `manifest.json` içine yazın.
+Resmi sürümlerin Google giriş istemcileri bu depoda yoktur. Kendi istemcileriniz olmadan uygulama Drive senkronunu gizler, klasör üzerinden senkron yine çalışır; tarayıcı eklentileri ise Drive gerektirir. Android, Windows, Chrome, Edge ve Firefox için ücretsiz Google Cloud projenizi nasıl kuracağınız [GOOGLE_SETUP.md](GOOGLE_SETUP.md#türkçe) dosyasında adım adım anlatılıyor.

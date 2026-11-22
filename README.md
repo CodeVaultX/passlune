@@ -35,7 +35,7 @@ passlune.app@gmail.com
 
 ## Source code
 
-The full source code (Android, Windows and the browser extensions) is in this repository under the [GPL-3.0](LICENSE) license. Building it is described in [BUILDING.md](BUILDING.md). The Google sign-in clients of the official builds are not included, so a build from source syncs through a folder unless you set up your own Google Cloud project. The Passlune name and logo are not covered by the license ([NOTICE.md](NOTICE.md)).
+The full source code (Android, Windows and the browser extensions) is in this repository under the [GPL-3.0](LICENSE) license. Building it is described in [BUILDING.md](BUILDING.md). The Google sign-in clients of the official builds are not included, so a build from source syncs through a folder unless you set up your own Google Cloud project ([GOOGLE_SETUP.md](GOOGLE_SETUP.md), step by step). The Passlune name and logo are not covered by the license ([NOTICE.md](NOTICE.md)).
 
 ---
 
@@ -69,4 +69,4 @@ passlune.app@gmail.com
 
 ### Kaynak kod
 
-Android, Windows ve tarayıcı eklentilerinin tüm kaynak kodu bu depoda, [GPL-3.0](LICENSE) lisansıyla yayımlanır. Derleme adımları [BUILDING.md](BUILDING.md) dosyasındadır. Resmi sürümlerin Google giriş kimlikleri depoda yoktur; kaynaktan derlenen bir sürüm, kendi Google Cloud projenizi kurmadıkça klasör üzerinden senkron yapar. Passlune adı ve logosu lisansa dahil değildir ([NOTICE.md](NOTICE.md)).
+Android, Windows ve tarayıcı eklentilerinin tüm kaynak kodu bu depoda, [GPL-3.0](LICENSE) lisansıyla yayımlanır. Derleme adımları [BUILDING.md](BUILDING.md) dosyasındadır. Resmi sürümlerin Google giriş kimlikleri depoda yoktur; kaynaktan derlenen bir sürüm, kendi Google Cloud projenizi kurmadıkça klasör üzerinden senkron yapar ([adım adım rehber](GOOGLE_SETUP.md#türkçe)). Passlune adı ve logosu lisansa dahil değildir ([NOTICE.md](NOTICE.md)).
