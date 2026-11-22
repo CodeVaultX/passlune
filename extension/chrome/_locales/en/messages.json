@@ -1,0 +1,13 @@
+{
+  "appName": {
+    "message": "Passlune: Password Manager",
+    "description": "Extension name in the store and browser lists (max 45 characters)."
+  },
+  "appShortName": {
+    "message": "Passlune"
+  },
+  "appDesc": {
+    "message": "Encrypted password manager: fills saved logins, offers to save new ones and syncs with the Passlune app via your Google Drive.",
+    "description": "Store summary (Chrome allows at most 132 characters)."
+  }
+}

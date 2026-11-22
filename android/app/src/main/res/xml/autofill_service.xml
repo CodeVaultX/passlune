@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Browsers that only expose web forms to autofill services through
+     compatibility mode. Chrome 131+ talks to autofill services natively when
+     "Autofill using another service" is chosen in its settings. -->
+<autofill-service xmlns:android="http://schemas.android.com/apk/res/android">
+    <compatibility-package android:name="com.android.chrome" android:maxLongVersionCode="10000000000"/>
+    <compatibility-package android:name="com.chrome.beta" android:maxLongVersionCode="10000000000"/>
+    <compatibility-package android:name="com.microsoft.emmx" android:maxLongVersionCode="10000000000"/>
+    <compatibility-package android:name="com.sec.android.app.sbrowser" android:maxLongVersionCode="10000000000"/>
+    <compatibility-package android:name="com.opera.browser" android:maxLongVersionCode="10000000000"/>
+    <compatibility-package android:name="com.brave.browser" android:maxLongVersionCode="10000000000"/>
+    <compatibility-package android:name="com.yandex.browser" android:maxLongVersionCode="10000000000"/>
+    <compatibility-package android:name="com.duckduckgo.mobile.android" android:maxLongVersionCode="10000000000"/>
+</autofill-service>

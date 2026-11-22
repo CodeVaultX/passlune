@@ -33,7 +33,9 @@ A password manager for Android, Windows, Chrome, Edge and Firefox. Your vault is
 
 passlune.app@gmail.com
 
-This repository holds the downloads and documentation only; the source code is not published here.
+## Source code
+
+The full source code (Android, Windows and the browser extensions) is in this repository under the [GPL-3.0](LICENSE) license. Building it is described in [BUILDING.md](BUILDING.md). The Google sign-in clients of the official builds are not included, so a build from source syncs through a folder unless you set up your own Google Cloud project. The Passlune name and logo are not covered by the license ([NOTICE.md](NOTICE.md)).
 
 ---
 
@@ -65,4 +67,6 @@ Android, Windows, Chrome, Edge ve Firefox için şifre yöneticisi. Kasanız cih
 
 passlune.app@gmail.com
 
-Bu depoda yalnızca indirmeler ve belgeler bulunur; kaynak kod burada yayımlanmaz.
+### Kaynak kod
+
+Android, Windows ve tarayıcı eklentilerinin tüm kaynak kodu bu depoda, [GPL-3.0](LICENSE) lisansıyla yayımlanır. Derleme adımları [BUILDING.md](BUILDING.md) dosyasındadır. Resmi sürümlerin Google giriş kimlikleri depoda yoktur; kaynaktan derlenen bir sürüm, kendi Google Cloud projenizi kurmadıkça klasör üzerinden senkron yapar. Passlune adı ve logosu lisansa dahil değildir ([NOTICE.md](NOTICE.md)).

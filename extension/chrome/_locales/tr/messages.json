@@ -1,0 +1,11 @@
+{
+  "appName": {
+    "message": "Passlune: Şifre Yöneticisi"
+  },
+  "appShortName": {
+    "message": "Passlune"
+  },
+  "appDesc": {
+    "message": "Şifreli şifre yöneticisi: girişleri doldurur, yenileri kaydetmeyi önerir; Passlune uygulamasıyla Google Drive üzerinden eşitlenir."
+  }
+}
