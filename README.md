@@ -27,6 +27,7 @@ A password manager for Android, Windows, Chrome, Edge and Firefox. Your vault is
 - Leaked-password check with Have I Been Pwned. Only a 5-character hash prefix is sent.
 - Android autofill: save and fill logins in apps and browsers.
 - Browser extension: fill logins and save new ones.
+- Import from Chrome, Edge, Firefox, Bitwarden or KeePassXC (their CSV export); entries you already have are skipped.
 - Categories, list or grid view, dark themes in several accent colours, English and Turkish.
 
 ## Support
@@ -61,6 +62,7 @@ Android, Windows, Chrome, Edge ve Firefox için şifre yöneticisi. Kasanız cih
 - Have I Been Pwned ile sızıntı kontrolü. Yalnızca özetin ilk 5 karakteri gönderilir.
 - Android otomatik doldurma: uygulamalarda ve tarayıcılarda girişleri kaydeder ve doldurur.
 - Tarayıcı eklentisi: girişleri doldurur, yenilerini kaydeder.
+- Chrome, Edge, Firefox, Bitwarden ya da KeePassXC'den içe aktarma (CSV dışa aktarma dosyası); zaten olan kayıtlar atlanır.
 - Kategoriler, liste ya da ızgara görünümü, farklı vurgu renklerinde koyu temalar, Türkçe ve İngilizce.
 
 ### Destek

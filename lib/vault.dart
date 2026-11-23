@@ -212,6 +212,19 @@ class Vault {
     onChanged?.call();
   }
 
+  /// Adds new entries with a single save and a single sync (an import).
+  Future<void> addAll(Iterable<Entry> list) async {
+    final now = _now();
+    for (final e in list) {
+      e
+        ..updatedAt = now
+        ..deleted = false;
+      _all.add(e);
+    }
+    await save();
+    onChanged?.call();
+  }
+
   Future<void> remove(String id) async {
     final i = _all.indexWhere((x) => x.id == id);
     if (i < 0) return;

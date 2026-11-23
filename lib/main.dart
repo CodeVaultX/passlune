@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -11,6 +12,7 @@ import 'about.dart';
 import 'autofill.dart';
 import 'autofill_fill.dart';
 import 'breach.dart';
+import 'csv_import.dart';
 import 'drive.dart';
 import 'insights.dart';
 import 'secure_clipboard.dart';
@@ -743,6 +745,49 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     }
   }
 
+  /// Logins exported as CSV from a browser or another password manager.
+  Future<void> _importCsv() async {
+    final f = await FilePicker.pickFile(
+        dialogTitle: t('Şifre dışa aktarma dosyasını (CSV) seç', 'Choose the passwords export (CSV)'));
+    if (f == null) return;
+    final CsvImport found;
+    try {
+      found = readPasswordCsv(utf8.decode(await f.readAsBytes(), allowMalformed: true), v.entries);
+    } on NotPasswordCsv {
+      return _snack(t('Bu dosyada şifre sütunu yok. Chrome, Edge, Firefox, Bitwarden ya da KeePassXC\'den dışa aktarılmış bir CSV seç.',
+          'This file has no password column. Choose a CSV exported from Chrome, Edge, Firefox, Bitwarden or KeePassXC.'));
+    }
+    if (!mounted) return;
+    if (found.entries.isEmpty) {
+      return _snack(found.duplicates > 0
+          ? t('Bu dosyadaki kayıtların hepsi zaten kasanda.', 'Every entry in this file is already in your vault.')
+          : t('Bu dosyada içe aktarılacak kayıt yok.', 'There is nothing to import in this file.'));
+    }
+    final n = found.entries.length;
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text(t('$n kayıt içe aktarılsın mı?', 'Import $n entries?')),
+        content: Text([
+          if (found.duplicates > 0)
+            t('${found.duplicates} kayıt zaten kasanda olduğu için atlanacak.',
+                '${found.duplicates} entries are already in your vault and will be skipped.'),
+          t('CSV dosyası şifrelerini açık metin olarak içerir. İçe aktardıktan sonra dosyayı sil (çöp kutusundan da).',
+              'The CSV file holds your passwords as plain text. Delete it after the import (from the bin too).'),
+        ].join('\n\n')),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c, false), child: Text(t('Vazgeç', 'Cancel'))),
+          FilledButton(onPressed: () => Navigator.pop(c, true), child: Text(t('İçe aktar', 'Import'))),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    await v.addAll(found.entries);
+    if (!mounted) return;
+    setState(() {});
+    _snack(t('$n kayıt içe aktarıldı. CSV dosyasını silmeyi unutma.', '$n entries imported. Don\'t forget to delete the CSV file.'));
+  }
+
   // ------------------------------------------------------------ settings
 
   void _settings() {
@@ -809,6 +854,8 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                 item(Icons.upload_outlined, t('Şifreli yedek al', 'Create encrypted backup'), t('Tüm kayıtlar AES-256 ile şifreli .kasa dosyası', 'All entries in an AES-256 encrypted .kasa file'),
                     _export),
                 item(Icons.download_outlined, t('Yedekten içe aktar', 'Import from backup'), t('.kasa dosyasındaki kayıtları ekle', 'Add the entries from a .kasa file'), _import),
+                item(Icons.table_view_outlined, t('CSV\'den içe aktar', 'Import from CSV'),
+                    'Chrome, Edge, Firefox, Bitwarden, KeePassXC', _importCsv),
                 if (AutofillBridge.available) ...[
                   _SectionTitle(t('Otomatik doldurma', 'Autofill')),
                   item(
