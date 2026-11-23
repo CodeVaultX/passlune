@@ -2,4 +2,6 @@
 <resources>
     <!-- Dark background behind the icon while the app starts (matches the app's theme). -->
     <color name="splash_bg">#0C0B09</color>
+    <!-- Start-up screen: the Lune Apps purple, so it flows into the Lune Apps logo the app shows first. -->
+    <color name="launch_bg">#1C1540</color>
 </resources>

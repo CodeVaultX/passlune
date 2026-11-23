@@ -79,13 +79,78 @@ class PassluneApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         navigatorKey: navKey,
         theme: buildTheme(UiPrefs.instance.palette),
-        home: const Gate(),
+        home: const LuneIntro(child: Gate()),
       ),
     );
   }
 }
 
 Palette get pal => UiPrefs.instance.palette;
+
+/// The Lune Apps logo, shown for a moment when the app starts; a tap skips
+/// it. [child] is built only afterwards, so the unlock screen doesn't open
+/// the keyboard over the logo.
+class LuneIntro extends StatefulWidget {
+  final Widget child;
+  const LuneIntro({super.key, required this.child});
+
+  static const background = Color(0xFF1C1540); // the logo's own background
+
+  @override
+  State<LuneIntro> createState() => _LuneIntroState();
+}
+
+class _LuneIntroState extends State<LuneIntro> {
+  static const _shown = Duration(milliseconds: 1300);
+  static const _fade = Duration(milliseconds: 350);
+  Timer? _timer;
+  bool _leaving = false, _done = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer(_shown, _leave);
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  void _leave() {
+    _timer?.cancel();
+    if (_leaving || !mounted) return;
+    setState(() => _leaving = true);
+    _timer = Timer(_fade, () {
+      if (mounted) setState(() => _done = true);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_done) return widget.child;
+    return GestureDetector(
+      onTap: _leave,
+      child: AnimatedOpacity(
+        opacity: _leaving ? 0 : 1,
+        duration: _fade,
+        child: ColoredBox(
+          color: LuneIntro.background,
+          child: Center(
+            child: LayoutBuilder(
+              builder: (_, box) => Image.asset(
+                'assets/luneapps_splash.png',
+                width: (box.biggest.shortestSide * 0.8).clamp(0, 420).toDouble(),
+                semanticLabel: 'Lune Apps',
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 /// Switches between the unlock screen and the vault, and auto-locks after a
 /// period of inactivity (time in the background counts too).

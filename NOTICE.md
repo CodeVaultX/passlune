@@ -2,7 +2,7 @@
 
 Passlune is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
 
-The name "Passlune" and the Passlune logo are not covered by that license. If you publish your own build, give it a different name and icon.
+The names "Passlune" and "Lune Apps" and their logos (including `assets/luneapps_splash.png`) are not covered by that license. If you publish your own build, give it a different name and icon.
 
 ## Third-party code in this repository
 

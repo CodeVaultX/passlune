@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # of the product and file versions while build-number is used as the build suffix.
 # Build number 5000 and up: earlier split APKs were 2001 (arm64) and 4001
 # (x86_64), and Play only updates to a higher versionCode.
-version: 1.0.2+5002
+version: 1.0.3+5003
 
 environment:
   sdk: ^3.13.4
@@ -69,6 +69,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/luneapps_splash.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
