@@ -2,7 +2,7 @@
 
 A password manager for Android, Windows, Chrome, Edge and Firefox. Your vault is encrypted on your device, and it syncs through your own Google Drive.
 
-[Türkçe](#türkçe) · [Privacy policy](privacy.md)
+[Türkçe](#türkçe) · [Privacy policy](privacy.md) · [Security](SECURITY.md)
 
 <p align="center">
   <img src="screenshots/dashboard.jpg" width="19%" alt="Security dashboard">
@@ -17,7 +17,7 @@ A password manager for Android, Windows, Chrome, Edge and Firefox. Your vault is
 
 - **Windows:** [Releases](../../releases/latest). Download `Passlune-Windows.zip`, extract it anywhere and run `Passlune.exe`.
 - **Firefox:** add-on on addons.mozilla.org [Passlune](https://addons.mozilla.org/tr/firefox/addon/passlune-password-manager/).
-- **Android:** coming to Google Play.
+- **Android:** [Releases](../../releases/latest): download `Passlune-Android.apk` and open it on your phone (allow installing from your browser or file manager when asked). It is signed with the same key as the Google Play version, which is coming soon, so Play updates will install over it.
 
 ## Features
 
@@ -43,7 +43,7 @@ The full source code (Android, Windows and the browser extensions) is in this re
 
 Android, Windows, Chrome, Edge ve Firefox için şifre yöneticisi. Kasanız cihazınızda şifrelenir ve kendi Google Drive'ınız üzerinden senkronlanır.
 
-[Gizlilik politikası](privacy.md#türkçe)
+[Gizlilik politikası](privacy.md#türkçe) · [Güvenlik](SECURITY.md#türkçe)
 
 <sub>Ekran görüntüleri (yukarıda): Güvenlik paneli · Izgara görünümü · Güç ve tekrar kullanım uyarıları · Temalar, senkron ve yedekler · Kilitli kasa</sub>
 
@@ -51,7 +51,7 @@ Android, Windows, Chrome, Edge ve Firefox için şifre yöneticisi. Kasanız cih
 
 - **Windows:** [Sürümler](../../releases/latest). `Passlune-Windows.zip` dosyasını indirip istediğiniz yere çıkarın ve `Passlune.exe`'yi çalıştırın.
 - **Firefox:** addons.mozilla.org'daki eklenti: [Passlune](https://addons.mozilla.org/tr/firefox/addon/passlune-password-manager/).
-- **Android:** yakında Google Play'de.
+- **Android:** [Sürümler](../../releases/latest): `Passlune-Android.apk` dosyasını indirip telefonunuzda açın (istenirse tarayıcınıza ya da dosya yöneticinize yükleme izni verin). Yakında çıkacak Google Play sürümüyle aynı anahtarla imzalıdır; Play güncellemeleri bunun üzerine kurulur.
 
 ### Özellikler
 
